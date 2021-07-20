@@ -19,10 +19,11 @@ $data = $database->select("emails", [
 ]);
 if (count($data) > 0) {
     foreach ($data as $key => $value) {
+        $date = strtotime($data[$key]['date']);
         echo "
     <tr>
-        <td>".$data['email']."</td>
-        <td>".$data['date']."</td>
+        <td>".$data[$key]['email']."</td>
+        <td>".date('\A\j\o\u\t\é \l\e d/m/Y à H:i', $date)."</td>
     </tr>
         ";
     }

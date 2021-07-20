@@ -30,7 +30,8 @@
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type="submit">
-							Envoyer l'URL
+							<span id="texturl">Envoyer l'URL</span>
+							<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 						</button>
 					</div>
 					<div id="message"></div>
@@ -74,10 +75,12 @@
 			  success: function(response)
 				  {
 					  $("#message").html(response);
+					  $("#listeadresse").load("fetch.php");
 				  },
 			  error: function(response)
 				  {
 					  $("#message").html(response);
+					  $("#listeadresse").load("fetch.php");
 				  }
 			});
   
@@ -87,10 +90,7 @@
 
 		$(document).ready(function () {
 			$("#listeadresse").load("fetch.php");
-			setInterval(function(){ 
-				$("#listeadresse").load("fetch.php");
-			}, 1000);
-			});
+		});
 	  </script>
 </body>
 </html>
