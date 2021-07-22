@@ -18,7 +18,7 @@ L'utilisation du scrapper reste assez simple, il suffit de vous placer dans le d
 
     git clone https://github.com/Thomaslrt/projet-scrapper
     
-Une fois cloné, ouvrez le fichier ```include/db.php``` et modifier la ligne avec les identifiants de votre base de données :
+Une fois cloné, ouvrez le fichier ```includes/db.php``` et modifier la ligne avec les identifiants de votre base de données :
 
 ```
 $database = new Medoo([
