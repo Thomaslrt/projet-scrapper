@@ -8,24 +8,14 @@ if (!preg_match($regex, $_POST['url'])) {
     die;
 }
 
-require 'Medoo.php';
-use Medoo\Medoo;
+require_once 'includes/db.php';
 require 'email_scraper.php' ;
 
 $url = $_POST['url'];
 $emails = scrape_email($url);
 
 try {
-    $database = new Medoo([
-        'type' => 'mysql',
-        'host' => 'localhost',
-        'database' => 'emails',
-        'username' => 'root',
-        'password' => 'root'
-    ]);
-
     $i = 0;
-
     foreach ($emails as $key => $value) {
         $data = $database->select("emails", ["email"], ["email" => "$value"]);
         if (!$data) {
@@ -35,10 +25,8 @@ try {
         }
     }
 
-
     echo ''.$i.' occurences ont été enregistrées en base de données, '.(count($emails)-$i).' ont été annulées ('.count($emails).' entrées au total).';
     
-
 } catch (Exception $e) {
     echo "Erreur : ".$e->getMessage();
 }

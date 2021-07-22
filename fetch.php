@@ -1,15 +1,6 @@
 <?php
 
-require 'Medoo.php';
-use Medoo\Medoo;
-
-$database = new Medoo([
-	'type' => 'mysql',
-	'host' => 'localhost',
-	'database' => 'emails',
-	'username' => 'root',
-	'password' => 'root'
-]);
+require_once 'includes/db.php';
 
 if (isset($_POST['id'])) {
     if ($_POST['id'] == 1) {
