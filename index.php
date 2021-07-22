@@ -1,5 +1,3 @@
-
-
 <html lang="fr">
 <head>
 	<title>Scrapping d'URL</title>
@@ -46,7 +44,10 @@
 							<tbody id="listeadresse">
 								
 							</tbody>
+							<input type="hidden" name="page" id="page" value="10">
 						</table>
+						<div class="boutons" data-id="1" style="float:left;">Précédent</div>
+						<div class="boutons" data-id="2" style="float:right;">Suivant</div>
 					</div>
 				</div>
 				
@@ -87,6 +88,27 @@
 
 		$(document).ready(function () {
 			$("#listeadresse").load("fetch.php");
+
+			$('.boutons').on('click', function (e) {
+			e.preventDefault();
+			id = $(this).data("id");
+			page = $('#page').val();
+			$.ajax({
+				type: 'post',
+				url : 'fetch.php',
+				data: {id, page},
+				dataType: 'html',
+				success: function(response)
+					{
+						$("#listeadresse").html(response);
+					},
+				error: function(response)
+					{
+						$("#listeadresse").html(response);
+					}
+			});
+
+			});
 		});
 	  </script>
 </body>
