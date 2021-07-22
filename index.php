@@ -26,13 +26,14 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<span id="texturl">Envoyer l'URL</span>
-						<div class="lds-ring">
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
+						<button class="login100-form-btn" type="submit">
+							<span id="texturl">Envoyer l'URL</span>
+							<div class="lds-ring">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
 						</button>
 					</div>
 					<div id="message"></div>
