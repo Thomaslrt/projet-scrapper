@@ -2,7 +2,7 @@
   margin: 0;
   background: -webkit-linear-gradient(45deg, #49a09d, #5f2c82);
   background: linear-gradient(45deg, #49a09d, #5f2c82);
-  font-family: sans-serif;
+  font-family: Montserrat-Regular;
   font-weight: 100;
 }
 .container {
@@ -59,7 +59,9 @@ tbody td:hover:before {
   align-items: center;
   text-align: center;
   margin-top: 20px;
+  font-family: Montserrat-Regular;
   transition: all 0.5s;
+  
 }
 
 .boutons:hover {
