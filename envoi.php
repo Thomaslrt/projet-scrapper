@@ -4,10 +4,8 @@ header('Content-type: application/json');
 
 $regex = '%^((https?://)|(www\.))([a-z0-9-].?)+(:[0-9]+)?(/.*)?$%i';
 if (!preg_match($regex, $_POST['url'])) {
-    $response_array['status'] = 'error'; 
-    $response_array['message'] = 'Veuillez saisir une URL valide.';
-    echo json_encode($response_array);
-    die();
+    echo 'Veuillez saisir une URL valide.';
+    die;
 }
 
 require 'Medoo.php';
