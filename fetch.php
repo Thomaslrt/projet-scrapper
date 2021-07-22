@@ -5,14 +5,14 @@ require_once 'includes/db.php';
 if (isset($_POST['id'])) {
     if ($_POST['id'] == 1) {
         if ($_POST['page'] > 20) {
-            $limit1 = (intval($_POST['page']))-10;
+            $limit1 = (intval($_POST['page'])) - 10;
         } else {
             $limit1 = (intval($_POST['page']));
         }
     } else if ($_POST['id'] == 2) {
-        $limit1 = (intval($_POST['page']))+10;
+        $limit1 = (intval($_POST['page'])) + 10;
     }
-    
+
     $data = $database->select("emails", [
         "email",
         "date"
@@ -34,12 +34,12 @@ if (count($data) > 0) {
         $date = strtotime($data[$key]['date']);
         echo "
     <tr>
-        <td>".$data[$key]['email']."</td>
-        <td>".date('\A\j\o\u\t\é \l\e d/m/Y à H:i:s', $date)."</td>
+        <td>" . $data[$key]['email'] . "</td>
+        <td>" . date('\A\j\o\u\t\é \l\e d/m/Y à H:i:s', $date) . "</td>
     </tr>
         ";
     }
-    echo '<input type="hidden" name="page" id="page" value="'.$limit1.'">';
+    echo '<input type="hidden" name="page" id="page" value="' . $limit1 . '">';
 } else {
     echo "
     <tr>
@@ -49,5 +49,3 @@ if (count($data) > 0) {
         ";
     echo '<input type="hidden" name="page" id="page" value="10">';
 }
-								
-?>

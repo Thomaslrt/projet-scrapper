@@ -10,7 +10,7 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 table {
   width: 800px;
@@ -49,23 +49,23 @@ tbody td:hover:before {
 }
 
 .boutons {
-  width:390px;
-  background-color:#394c91;
-  color:white;
+  width: 390px;
+  background-color: #394c91;
+  color: white;
   border: 1px rgba(255, 255, 255, 0.219) solid;
-  height:40px;
-  display:flex;
+  height: 40px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  text-align:center;
-  margin-top:20px;
-  transition:all 0.5s;
+  text-align: center;
+  margin-top: 20px;
+  transition: all 0.5s;
 }
 
 .boutons:hover {
-  background-color:#5f2c82;
+  background-color: #5f2c82;
   border: 1px rgba(255, 255, 255, 0.219) solid;
-  transition:all 0.5s;
-  cursor:pointer;
+  transition: all 0.5s;
+  cursor: pointer;
   transform: scale(1.05);
 }

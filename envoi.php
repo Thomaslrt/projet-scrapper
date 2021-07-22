@@ -9,7 +9,7 @@ if (!preg_match($regex, $_POST['url'])) {
 }
 
 require_once 'includes/db.php';
-require 'email_scraper.php' ;
+require 'email_scraper.php';
 
 $url = $_POST['url'];
 $emails = scrape_email($url);
@@ -25,10 +25,7 @@ try {
         }
     }
 
-    echo ''.$i.' occurences ont été enregistrées en base de données, '.(count($emails)-$i).' ont été annulées ('.count($emails).' entrées au total).';
-    
+    echo '' . $i . ' occurences ont été enregistrées en base de données, ' . (count($emails) - $i) . ' ont été annulées (' . count($emails) . ' entrées au total).';
 } catch (Exception $e) {
-    echo "Erreur : ".$e->getMessage();
+    echo "Erreur : " . $e->getMessage();
 }
-
-?>

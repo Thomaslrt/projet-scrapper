@@ -1,6 +1,7 @@
-<?php 
+<?php
 
 require 'Medoo.php';
+
 use Medoo\Medoo;
 
 
@@ -11,8 +12,7 @@ try {
         'database' => 'emails',
         'username' => 'root',
         'password' => 'root'
-    ]);    
+    ]);
 } catch (Exception $e) {
-    echo "Erreur : ".$e->getMessage();
+    echo "Erreur : " . $e->getMessage();
 }
-?>
